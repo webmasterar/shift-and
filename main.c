@@ -6,8 +6,16 @@
 
 int main(int argc, char ** argv)
 {
+    if (argc != 3) {
+	fprintf(stderr, "Too few Arguments!\nUsage: ./shift-and TEXT PATTERN\n");
+	return 1;
+    }
     unsigned int n = strlen(argv[1]);
     unsigned int m = strlen(argv[2]);
+    if (m > n) {
+	fprintf(stderr, "Pattern must be shorter than text!\n");
+	return 1;
+    }
     if (m > BITSINWORD) {
         fprintf(stderr, "Pattern too long!\n");
         return 1;

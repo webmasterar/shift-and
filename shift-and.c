@@ -25,7 +25,7 @@ void search(const char * t, unsigned int n, const char * p, unsigned int m)
     for (i = 0; i < n; i++) {
         d = ((d << 1) | 1ul) & B[t[i]];
         if (d & z) {
-            printf("Match found at position %u\n", i - m);
+            printf("Match found at position %u\n", i - m + 1);
         }
     }
 
